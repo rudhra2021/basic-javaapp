@@ -12,7 +12,9 @@ sh "${mvnHome}/bin/mvn package"
         }
         stage("email notification")
         {
-                mail bcc: '', body: 'Find the attached jenkins ststus.', cc: '', from: '', replyTo: '', subject: 'Jenkinspipeline', to: 'sasidharallnew'
+                mail bcc: '', body: '''hi,
+jenkins mail alert
+''', cc: '', from: '', replyTo: '', subject: 'jenkins-alert-mail', to: 'sasidharallnew@gmail.com'
         }
 }
 
