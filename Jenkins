@@ -1,0 +1,13 @@
+node
+{
+stage("git-pull")
+        {       
+        git 'https://github.com/rudhra2021/basic-javaapp.git'
+        }
+
+stage("compile-package")
+        {
+def mvnHome
+        }
+}
+
