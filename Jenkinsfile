@@ -22,13 +22,13 @@ sh "${mvnHome}/bin/mvn package"
           timeout(time: 1, unit: 'HOURS') {
               def qg = waitForQualityGate()
                 mail bcc: '', body: '''hi,
-                jenkins qg.status
+                jenkins ${qg.status}
                 ''', cc: '', from: '', replyTo: '', subject: 'jenkins-alert-mail', to: 'sasidharallnew@gmail.com'
                   
                if (qg.status != 'OK') {
                   error "Pipeline aborted due to quality gate failure: ${qg.status}"
                   mail bcc: '', body: '''hi,
-                  jenkins qg.status
+                  jenkins ${qg.status}
                   ''', cc: '', from: '', replyTo: '', subject: 'jenkins-alert-mail', to: 'sasidharallnew@gmail.com'
       
               }
